@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Direktlinks Professur für Wirtschaftspädagogik</title>
+
+  <style>
+    :root {
+      --uni-blue: #235179;
+      --uni-blue-hover: #3E85C6;
+      --light-blue: #eaf2f8;
+      --text: #1f1f1f;
+      --muted: #5f666d;
+      --border: #d6dde3;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: transparent;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+    }
+
+    body {
+      padding: 4px;
+    }
+
+    .button-grid {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .button-card {
+      position: relative;
+      min-height: 150px;
+      padding: 24px 58px 24px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      background: #ffffff;
+      color: var(--text);
+      text-decoration: none;
+
+      border: 1px solid var(--border);
+      border-top: 6px solid var(--uni-blue);
+      border-radius: 4px;
+
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        background-color 0.15s ease,
+        border-color 0.15s ease;
+    }
+
+    .button-card:hover {
+      transform: translateY(-2px);
+      background: var(--light-blue);
+      border-color: #b9c8d4;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    }
+
+    .button-card:focus-visible {
+      outline: 3px solid #111111;
+      outline-offset: 3px;
+    }
+
+    .button-title {
+      font-size: 1.3rem;
+      line-height: 1.25;
+      font-weight: 700;
+      color: var(--uni-blue);
+    }
+
+    .button-description {
+      margin-top: 10px;
+      font-size: 0.95rem;
+      line-height: 1.45;
+      color: var(--muted);
+    }
+
+    .arrow {
+      position: absolute;
+      right: 22px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.8rem;
+      line-height: 1;
+      font-weight: 700;
+      color: var(--uni-blue);
+    }
+
+    @media (max-width: 650px) {
+      .button-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .button-card {
+        min-height: 120px;
+        padding: 20px 52px 20px 20px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .button-card {
+        transition: none;
+      }
+
+      .button-card:hover {
+        transform: none;
+      }
+    }
+  </style>
+
+  <!--
+    Notwendig für TYPO3 -> Automatic Size -> "iFrame Resizer"
+    bei Einbindung einer externen GitHub-Pages-Domain.
+  -->
+  <script src="https://www.uni-bamberg.de/_frontend/static/iframeResizer.contentWindow.min.js"></script>
+</head>
+
+<body>
+
+  <nav class="button-grid" aria-label="Weiterführende Bereiche der Professur">
+
+    <a
+      class="button-card"
+      href="https://www.uni-bamberg.de/wipaed-p/team/"
+      target="_top"
+    >
+      <span class="button-title">Team</span>
+      <span class="button-description">
+        Lernen Sie die Mitarbeiterinnen und Mitarbeiter der Professur kennen
+        und finden Sie Ansprechpartner, Kontaktdaten und Sprechzeiten.
+      </span>
+      <span class="arrow" aria-hidden="true">›</span>
+    </a>
+
+    <a
+      class="button-card"
+      href="https://www.uni-bamberg.de/wipaed-p/downloadbereich-fuer-schulen/"
+      target="_top"
+    >
+      <span class="button-title">Downloadbereich für Schulen</span>
+      <span class="button-description">
+        Materialien und Dokumente für die Unterrichtsgestaltung sowie
+        ausgewählte Ergebnisse aus Kooperationen mit Schulen.
+      </span>
+      <span class="arrow" aria-hidden="true">›</span>
+    </a>
+
+  </nav>
+
+</body>
+</html>
+
+<!--
+======================================================================
+README / WARTUNGSHINWEIS – BUTTONS WIPAED-P
+Stand: 01.10.2026
+======================================================================
+
+Einsatz:
+Diese Datei ersetzt die zwei grafischen Teaser am unteren Ende der Startseite
+der Professur für Wirtschaftspädagogik.
+
+Startseite:
+https://www.uni-bamberg.de/wipaed-p/
+
+AKTUELLE ZIELLINKS:
+
+01 Team
+   https://www.uni-bamberg.de/wipaed-p/team/
+
+02 Downloadbereich für Schulen
+   https://www.uni-bamberg.de/wipaed-p/downloadbereich-fuer-schulen/
+
+
+TYPO3:
+- Datei über GitHub Pages veröffentlichen.
+- GitHub-Pages-URL als iframe / externen Inhalt in TYPO3 einbinden.
+- Bei "Automatic Size" unbedingt "iFrame Resizer" auswählen.
+- NICHT "Automatische Höhe" verwenden, da GitHub Pages eine andere Domain ist.
+
+iFrame-Resizer:
+Diese Datei enthält im <head>:
+https://www.uni-bamberg.de/_frontend/static/iframeResizer.contentWindow.min.js
+
+Navigation:
+- target="_top" sorgt dafür, dass die komplette Uni-Seite auf das Ziel wechselt
+  und nicht nur der Inhalt innerhalb des iframe.
+
+Responsive Darstellung:
+- Desktop / Tablet: 2 Kacheln nebeneinander
+- Smartphone: 1 Kachel pro Zeile
+
+Pflege:
+Wenn sich eine Zielseite ändert, lediglich den jeweiligen href="..."-Wert
+oben im HTML ersetzen.
+
+======================================================================
+-->
