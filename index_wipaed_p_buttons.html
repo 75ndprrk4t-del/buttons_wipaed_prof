@@ -35,7 +35,7 @@
     .button-grid {
       width: 100%;
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: 1fr;
       gap: 18px;
     }
 
@@ -101,11 +101,6 @@
     }
 
     @media (max-width: 650px) {
-      .button-grid {
-        grid-template-columns: 1fr;
-        gap: 12px;
-      }
-
       .button-card {
         min-height: 120px;
         padding: 20px 52px 20px 20px;
@@ -202,12 +197,13 @@ Navigation:
   und nicht nur der Inhalt innerhalb des iframe.
 
 Responsive Darstellung:
-- Desktop / Tablet: 2 Kacheln nebeneinander
-- Smartphone: 1 Kachel pro Zeile
+- Alle Bildschirmgrößen: 2 Kacheln untereinander
 
 Pflege:
 Wenn sich eine Zielseite ändert, lediglich den jeweiligen href="..."-Wert
 oben im HTML ersetzen.
 
 ======================================================================
+
+beste grüße stefan
 -->
